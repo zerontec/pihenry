@@ -1,6 +1,6 @@
 /* const Dieta = require("../models/Dieta");
 const Recipe = require("../models/Recipe"); */
-const { allRecipes, recipesApi, apiRecipes } = require("./functions");
+const { allRecipes} = require("./functions");
 const { Dieta, Recipe } = require("../db");
 
 const { API_KEY } = process.env;
@@ -17,8 +17,7 @@ const getRecipes = async (req, res) => {
     if (name) {
       let recipeName = await totalRecipes.filter((r) =>r.title.toLowerCase().includes(name.toLowerCase())
       );
-      recipeName.length
-        ? res.status(200).json(recipeName): res.status(400).json("Esta Receta no esta registrada");
+      recipeName.length? res.status(200).json(recipeName): res.status(400).json("Esta Receta no esta registrada");
     } else {
       res.status(200).json(totalRecipes);
     }
