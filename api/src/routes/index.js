@@ -4,13 +4,7 @@ const router = Router()
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 
-const{
-    getRecipeId,
-    getRecipes,
-    getTypes,
-    postRecipe
-
-}=require('./controller')
+const{getRecipeId,getRecipes,getTypes,postRecipe}=require('./controller')
 
 
 
