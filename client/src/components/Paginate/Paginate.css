@@ -1,0 +1,28 @@
+/* PAGINACION */
+
+/* PAGINACION */
+
+.pagination a {
+  color: black;
+/*   float: left; */
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  background: #ffc107;
+  
+}
+
+.pagination a.active {
+  background-color: #9517fb;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: rgb(202, 88, 88);}
+
+.pagicont{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}

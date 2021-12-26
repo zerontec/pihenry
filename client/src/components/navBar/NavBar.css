@@ -1,0 +1,32 @@
+@media screen and (max-width:700px){
+    main .container,
+    footer .container{
+        padding: 60px 0;
+    }
+}
+
+    .nav__container{
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+ 
+
+.nav__hero{
+    color: #f9f7f7;
+    height: 70px;
+    border-bottom: 1px solid rgba(255,255,255, 0.1);
+    background-color: linear-gradient(180deg, var(--black2) 0%, var(--black1) 100%)
+}
+
+.nav__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: inherit;
+    padding: 0;
+    background-color: linear-gradient(180deg, var(--black2) 0%, var(--black1) 100%)
+   
+
+}

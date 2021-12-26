@@ -16,20 +16,20 @@ module.exports = (sequelize) => {
       allowNull: false,
       unique:true
     },
-    summaryDish:{
+    summary:{
 
       type:DataTypes.STRING,
       allowNull:false
     },
 
-    addLikes:{
+    aggregateLikes:{
 
   type:DataTypes.INTEGER
     },
-    health:{
+    healthScore:{
       type:DataTypes.INTEGER
     },
-    instructions:{
+    analyzedInstructions:{
       type:DataTypes.TEXT
     },
     image: {
@@ -38,7 +38,7 @@ module.exports = (sequelize) => {
         createdDb: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
-      allowNull: false,
+     
     },
  
   });

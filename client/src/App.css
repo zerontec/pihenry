@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,38 @@
   to {
     transform: rotate(360deg);
   }
+}
+ */
+
+ :root{
+  --gold1: #ffc107;
+  --gold2: #f44336;
+  --gray: #e3f2fd;
+  --gray2: #f7d9d990;
+  --black1: #1A1B1F;
+  --black2: #30353B;
+  --shadow: 0 8px 8px;
+  --color_shadow: #00000033;
+}
+
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+.container{
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding:100px 0;
+  height: auto;
+}
+
+.container--modifier{
+  width: 60%;
 }

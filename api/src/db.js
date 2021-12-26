@@ -6,7 +6,7 @@ const {
   DB_USER, DB_PASSWORD, DB_HOST,
 } = process.env;
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/testi`, {
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/receta`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 });
@@ -43,3 +43,8 @@ module.exports = {
 
 
 //api_key  80750234fea243388dfaef82c32499ac
+//29f9bf0adfab4eb9b536e5e1f1b36e2d
+//47503923b28f4a4ea5a00df38ba06864
+//8d916b59e8be47fd921bbb99aee874a0
+//2f7fc2cc069d48bdb1efb89eb507725c mas nueva|
+//3547430aa6664ea1ae5ae378b4ce6a29

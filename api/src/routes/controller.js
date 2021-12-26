@@ -11,7 +11,7 @@ const axios = require("axios");
 /// recipes//////////////////
 
 const getRecipes = async (req, res) => {
-  const { name} = req.query;
+  try {const { name} = req.query;
  
     const totalRecipes = await allRecipes();
     if (name) {
@@ -21,6 +21,11 @@ const getRecipes = async (req, res) => {
     } else {
       res.status(200).json(totalRecipes);
     }
+  } catch(e){
+
+      console.log(e)
+
+  }
  
 };
 ///////////////////////////////xcvvxcvxc////////////////////////
@@ -29,9 +34,9 @@ const getTypes=   async (_req, res) => {
   try{
     const recipesApi = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`);
    
-  let types = await recipesApi.data.results.map((t) => t.diets);
-   let diets = types.flat();
-   let typeDiets = [...new Set(diets), "vegetarian"];
+  const types = await recipesApi.data.results.map((t) => t.diets);
+   const diets = types.flat();
+   const typeDiets = [...new Set(diets) , "vegetarian"];
    typeDiets.forEach((d) => {
     Dieta.findOrCreate({
         where: { name: d },
@@ -39,7 +44,7 @@ const getTypes=   async (_req, res) => {
     });
   
    const allDiets = await Dieta.findAll();
-   res.json(allDiets);
+   res.send(allDiets);
      }catch(e){
          console.log(e)
      }
@@ -50,10 +55,10 @@ const getTypes=   async (_req, res) => {
 ////POST/////////////
 const postRecipe = async (req, res) => {
   try {
-    const { title, summaryDish, addLikes, health, instructions, image, diets } =req.body;
+    const { title, summary, aggregateLikes, healthScore, analyzedInstructions, image, diets } =req.body;
 
     const totalRecipes = await allRecipes();
-    if (!title|| !summaryDish) {
+    if (!title|| !summary) {
       return res.json(
         "Ingresa un nombre y Resumen de plato para crear el mismo"
       );
@@ -67,14 +72,15 @@ const postRecipe = async (req, res) => {
 
     const createRecipe = await Recipe.create({
       title,
-      summaryDish,
-      addLikes, 
-      health, 
-      instructions,
-      image
+      summary,
+      aggregateLikes, 
+      healthScore, 
+      analyzedInstructions,
+      image,
+     
      
     });
-    let dietDb = await Dieta.findAll({where: { name: title },
+    let dietDb = await Dieta.findAll({where: { name: diets },
     });
     createRecipe.addDieta(dietDb);
     res.status(200).send("Receta Creada Con Exito :)");
@@ -89,7 +95,7 @@ const getRecipeId = async (req, res) => {
     const recipeTotal = await allRecipes();
     if (id) {
       let recipeId = await recipeTotal.filter((r) => r.id == id);
-      recipeId.length ? res.send.status(200).json(recipeId): res.status(400).send("Recipe No Encontrado");
+      recipeId.length ? res.status(200).json(recipeId): res.status(400).send("Recipe No Encontrado");
     }
   } catch (e) {
     console.log(e);

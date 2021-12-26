@@ -1,0 +1,98 @@
+
+.newsletter{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 40px;
+    height: auto;
+    font-family: inherit;
+    position: relative;
+    border-radius: 6px;
+}
+
+.newsletter--modifier{
+    margin: 0;
+    width: 80%;
+}
+
+.newsletter__input{
+    width: 100%;
+    height: 100%;
+    padding: 22px 10px;
+    outline: none;
+    font-family: inherit;
+    border-radius: 6px;
+    border: 1px solid var(--black1)
+}
+
+.newsletter__submit{
+    position: absolute;
+    right: 8px;
+    top: 10%;
+    height: 80%;
+    background: linear-gradient(180deg, var(--black2) 0%, var(--black1) 100%);
+    color: #fff;
+    padding: 0 15px;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+.newsletter{
+    width: 80%;
+}
+
+
+
+.check__item{
+    width: 100%;
+    border: none;
+    padding: none;
+    justify-content: center;
+}
+
+
+
+.subtitle{
+    font-size: 42px;
+}
+
+.subtitle--modifier{
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+
+.colunp{
+
+    column-count:4;
+    column-gap: 3em;
+
+text-align: center;
+column-width: 140px;
+
+    
+}
+
+.herr{
+    background-image: url('../../images/slider-02.jpg');background-repeat: no-repeat;background-size: cover;
+ background-color: #cccccc;
+ display: flex; 
+color: white;
+  
+ height: 300px; 
+ 
+ align-items: center;
+ 
+}
+
+.btnHome{
+    padding: 20px 30px;
+    display: inline-block;
+    background: #f81aa3;
+    text-decoration: none;
+    color: white;
+    font-weight: 200;
+    box-shadow: var(--shadow) var(--color_shadow);
+    border-radius: 6px;
+}
