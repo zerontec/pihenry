@@ -106,7 +106,7 @@ export function getDiets() {
 }
 
 
-export  const postRecipe = async(payload) => {
+/* export  const postRecipe = async(payload) => {
  try{ let newRecipe = `${server}/recipe` 
      await axios.post(newRecipe, payload);
   return alert(`el recipe ${payload.title} fue creado con exito `)
@@ -116,6 +116,20 @@ export  const postRecipe = async(payload) => {
       return alert("Error al crear")
     }
       }
+ */
+
+export function postRecipe  (payload){
+
+ try{return async function(){
+
+  const res = await axios.post(`${server}/recipe`, payload)
+  return res
+ }
+}catch(e){
+  return alert("error al crear", e)
+}
+}
+
 
 
 export function getDetail(id) {
