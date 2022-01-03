@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('./routes/index.js');
 
+/* const session = require(express-session) */
+
 require('./db.js');
 
 const server = express();
@@ -23,6 +25,16 @@ server.use((req, res, next) => {
 });
 
 server.use('/', routes);
+
+//to Password
+
+/* server.use(session({secret: 'keyboard cat', resave: true, saveUninitialize:true})) //session secret
+server.use(passport.initialize());
+server.use(passport.session());
+ */
+
+
+
 
 // Error catching endware.
 server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars

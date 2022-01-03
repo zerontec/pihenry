@@ -149,7 +149,7 @@ export default function Recipe() {
             name="title"
             onChange={(e) => handletChange(e)}
           />
-          {errors.title && <p>{errors.title}</p>}
+          {errors.title && <p className="pe">{errors.title}</p>}
 
           <div className="titler">
             <h2>Resumen</h2>
@@ -163,7 +163,7 @@ export default function Recipe() {
             name="summary"
             onChange={(e) => handletChange(e)}
           />
-          {errors.summary && <p>{errors.summary}</p>}
+          {errors.summary && <p className="pe">{errors.summary}</p>}
 
 
          
@@ -221,7 +221,7 @@ export default function Recipe() {
             name="image"
             onChange={(e) => handletChange(e)}
           />
-             {errors.image && <p>{errors.image}</p>}
+             {errors.image && <p className="pe">{errors.image}</p>}
 
 
 
@@ -233,7 +233,7 @@ export default function Recipe() {
               className="newsletter__input"
             >
               { diets.map(d =>{ 
-              return ( <option value={d.name}  key={d.name} name={d.name}  >
+              return ( <option value={d.name}  key={d.id} /* name={d.name} */  >
                   <p>{d.name}</p>
                 </option>
               )})}
@@ -244,7 +244,7 @@ export default function Recipe() {
                 <button onClick={(e) => handleDelete(e, d)}>X</button>
               </ul>
             ))}
-             {errors.diets && <p>{errors.diets}</p>}
+             {errors.diets && <p className="pe">{errors.diets}</p>}
           
 
           

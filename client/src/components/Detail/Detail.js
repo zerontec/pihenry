@@ -80,7 +80,7 @@ return (
           <div className="caja">
          <h3>Resumen de Receta </h3>
          <hr/>
-              <p>{detail[0].summary.replace(/<[^>]*>?/g, "")}</p>
+              <p className="pd">{detail[0].summary.replace(/<[^>]*>?/g, "")}</p>
 
              
 

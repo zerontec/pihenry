@@ -48,7 +48,7 @@ export default function Home() {
   }, [dispatch]);
 
   useEffect(() => {
-    setLoading(true)
+   
     dispatch(getTypeOfDiet());
   }, [dispatch]);
 
@@ -67,13 +67,13 @@ export default function Home() {
     e.preventDefault();
     dispatch(orderName(e.target.value));
     setCurrentPage(1);
-    setOrderNames("Order", + e.target.value);
+    setOrderNames("Order" + e.target.value);
   }
   function handleSelectScore(e) {
     e.preventDefault();
     dispatch(orderScore(e.target.value));
     setCurrentPage(1);
-    setOrderScore("Order", + e.target.value);
+    setOrderScore("Order" + e.target.value);
   }
 
   return (
@@ -119,7 +119,7 @@ export default function Home() {
 
         <form className="newsletter">
           <select className="newsletter" onChange={(s) => handleSelectScore(s)}>
-            <option value="default">Todas</option>
+            <option value="ALL">Todas</option>
             <option value="Asc">Mayor Puntajes</option>
             <option value="Desc">Menor Puntajes</option>
           </select>

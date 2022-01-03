@@ -32,6 +32,11 @@ const dbInfo = async () => {
   });
 };
 
+
+//Esto para mis user Funcionalidad Extra no PI
+
+
+
 //Unirlos todos
 
 const allRecipes = async () => {

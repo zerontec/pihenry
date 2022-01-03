@@ -86,10 +86,10 @@ function rootReducer(state = initialState, action) {
       let ordenarRecipes =
         action.payload === "Desc"
           ? state.recipes.sort((a, b) => a.aggregateLikes - b.aggregateLikes)
-          : state.recipes.sort((a, b) => b.aaggregateLikes- a.aggregateLikes);
+          : state.recipes.sort((a, b) => b.aggregateLikes- a.aggregateLikes);
       return {
         ...state,
-        recipes: action.payload === " ALL" ? state.recipes : ordenarRecipes,
+        recipes: action.payload === "ALL" ? state.recipes : ordenarRecipes,
       };
 
     case GET_RECIPE_NAME:
