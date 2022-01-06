@@ -2,7 +2,7 @@ import axios from "axios";
 import {
   GET_RECIPES,
   GET_DETAIL,
-  GET_DIETS,
+ /*  GET_DIETS, */
   GET_TYPES_OF_DIET,
   ORDER_BY_NAME,
   ORDER_BY_SCORE,
@@ -31,7 +31,7 @@ export function getRecipes() {
 export function getTypeOfDiet() {
   return async function (dispatch) {
     try {
-      let res = await axios.get(`${server}/types`);
+      let res = await axios.get(`${server}/types`, {});
 
       return dispatch({
         type: GET_TYPES_OF_DIET,
@@ -43,16 +43,20 @@ export function getTypeOfDiet() {
   };
 }
 
-/* export function getTypes (){
-return function(dispatch){
 
-  return axios.get('http://localhost:3000')
-  .then(response => response.json())
-  .then(json => {dispatch({ type: ORDER_BY_NAME, payload: json})})
+/* 
+export function getTypeOfDiet() {
+  return function (dispatch) {
+    axios.get(`${server}/types`)
+      .then((response) => {
+        return dispatch({ type: GET_TYPES_OF_DIET, payload: response.data });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 }
-
-} */
-
+ */
 export function filterDiet(payload) {
   return {
     type: FILTER_BY_DIET,
@@ -90,23 +94,17 @@ export function getRecipename(name) {
 }
 
 
+export function getrecipename(name){
 
-export function getDiets() {
-  return async function (dispatch) {
-    try {
-      var res = await axios.get(`${server}/types`);
-      return dispatch({
-        type: GET_DIETS,
-        payload: res.data,
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  };
+  return function(){
+
+
+  }
+
 }
 
-
-/* export  const postRecipe = async(payload) => {
+/* 
+export  const postRecipe = async(payload) => {
  try{ let newRecipe = `${server}/recipe` 
      await axios.post(newRecipe, payload);
   return alert(`el recipe ${payload.title} fue creado con exito `)

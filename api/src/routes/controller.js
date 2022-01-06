@@ -17,7 +17,8 @@ const getRecipes = async (req, res) => {
     if (name) {
       let recipeName = await totalRecipes.filter((r) =>r.title.toLowerCase().includes(name.toLowerCase())
       );
-      recipeName.length? res.status(200).json(recipeName): res.status(400).json("Esta Receta no esta registrada");
+      recipeName.length? res.status(200).json(recipeName):
+       res.status(400).json("Esta Receta no esta registrada");
     } else {
       res.status(200).json(totalRecipes);
     }
@@ -66,7 +67,7 @@ const postRecipe = async (req, res) => {
 
       let recipeTitle = await totalRecipes.filter((r) => r.title.toLowerCase().includes(title.toLowerCase()));
       if(recipeTitle.length){
-     return  res.status(200).json( "Ya existe Un recipe con ese Nombre")
+     return  res.send( "Ya existe Un recipe con ese Nombre")
       }
     }
 
@@ -80,10 +81,10 @@ const postRecipe = async (req, res) => {
      
      
     });
-    let dietDb = await Dieta.findAll({where: { name: diets },
+    let dietDb = await Dieta.findAll({where: { name: diets },  //areglo de id que viene del front
     });
     createRecipe.addDieta(dietDb);
-    res.status(200).send("Receta Creada Con Exito :)");
+    res.status(200).send("Recipe Creada Con Exito :)");
   } catch (e) {
     console.log(e);
   }

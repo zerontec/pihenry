@@ -1,5 +1,5 @@
 
-.newsletter{
+.form{
     width: 60%;
     margin: 0 auto;
     margin-top: 40px;
@@ -9,12 +9,12 @@
     border-radius: 6px;
 }
 
-.newsletter--modifier{
+.form--modifier{
     margin: 0;
     width: 80%;
 }
 
-.newsletter__input{
+.form__input{
     width: 100%;
     height: 100%;
     padding: 22px 10px;
@@ -24,7 +24,7 @@
     border: 1px solid var(--black1)
 }
 
-.newsletter__submit{
+.form__submit{
     position: absolute;
     right: 8px;
     top: 10%;
@@ -38,7 +38,7 @@
     font-weight: 700;
     cursor: pointer;
 }
-.newsletter{
+.form{
     width: 80%;
 }
 

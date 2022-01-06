@@ -1,7 +1,7 @@
 import React from "react";
 import "./Deteil.css"
 import Navbar from "../navBar/Navbar";
-import Footer from "../Fotter/Footer";
+
 import { useEffect, useState } from "react";
 import {useDispatch, useSelector} from  "react-redux"
 import {getDetail} from '../../actions/index';
@@ -29,10 +29,10 @@ return (
       
       <section className="projects container">
         <h2 className="subtitle">
-          Unica y Verdaderas Recetas <span className="point">.</span>
+        Unique and True Recipes <span className="point">.</span>
         </h2>
         <p className="copy__section">
-          Conoce al Detalle y Animate a crear la tuya
+        Get to know the Detail and Animate to create yours
         </p>
        { detail.length ?(
         <article className="container-bg">
@@ -43,25 +43,25 @@ return (
 
 
                 
-              Nombre:  {detail[0].title} <span className="point">.</span>
+              Name:  {detail[0].title} <span className="point">.</span>
               </h3>
-              {detail[0].healthScore != 0 ? (
-                <p className="card__date">Nivel de Salud: {detail[0].healthScore}</p>
+              {detail[0].healthScore !== 0 ? (
+                <p className="card__date">Health level: {detail[0].healthScore}</p>
               ) : (
-                <p>Nivel de Salud: -</p>
+                <p>Health level: -</p>
               )}
                 {detail[0].aggregateLikes !== 0 ? (
-                <p className="card__date"> Puntaje: {detail[0].aggregateLikes}   </p>
+                <p className="card__date"> Score: {detail[0].aggregateLikes}   </p>
                 ) : (
-                    <h3>Puntaje: - </h3>
+                    <h3>Score: - </h3>
                   )}
             
-            
+                    
 
               
-              <a href="#" className="card__button">
-                Agregar a Favorito
-              </a>
+              <button  className="card__button">
+              Add to Favorite
+              </button>
             </div>
           </div>
 
@@ -78,7 +78,7 @@ return (
            
           </div>
           <div className="caja">
-         <h3>Resumen de Receta </h3>
+         <h3>Recipe Summary </h3>
          <hr/>
               <p className="pd">{detail[0].summary.replace(/<[^>]*>?/g, "")}</p>
 
@@ -89,10 +89,10 @@ return (
 <div className="caja">
 
 {detail[0].analyzedInstructions ? (
-              <><h3>Instrucciones paso a paso: </h3><hr /></>
+              <><h3>Step by step instructions: </h3><hr /></>
               
             ) : (
-              <h3>Instrucciones paso a paso: - </h3>
+              <h3>Step by step instructions: - </h3>
             )}
 
             {detail[0].analyzedInstructions.length > 0 ? (

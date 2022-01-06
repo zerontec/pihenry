@@ -1,5 +1,5 @@
 import {
-  GET_DIETS,
+ 
   GET_DETAIL,
   GET_RECIPES,
   GET_TYPES_OF_DIET,
@@ -11,7 +11,7 @@ import {
 } from "../actionsTypes";
 
 const initialState = {
-  recipes: ([]),
+  recipes: [],
   allRecipes: [],
   diets: [],
   detail: [],
@@ -31,6 +31,7 @@ function rootReducer(state = initialState, action) {
         ...state,
         diets: action.payload,
       };
+
       case FILTER_BY_DIET:
         let allRecipes = state.allRecipes;
         const apiRecipes = allRecipes.filter((r) => !r.createdDb);
@@ -98,12 +99,7 @@ function rootReducer(state = initialState, action) {
         recipes: action.payload,
       };
 
-    case GET_DIETS:
-      return {
-        ...state,
-        diets: action.payload,
-      };
-
+  
     case POST_RECIPE:
       return {
         ...state,

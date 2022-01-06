@@ -33,9 +33,9 @@ function handleSubmit(e){
             className="newsletter__input"
             value={name} 
             onChange={(e) =>handleInputChange(e)}
-            placeholder="Ingresa tu Busqueda"/>
+            placeholder="Enter your search"/>
 
-            <input type="submit" onClick={(e) => handleSubmit(e)} className="newsletter__submit" value="Buscar"/>
+            <input type="submit" onClick={(e) => handleSubmit(e)} className="newsletter__submit" value="Search"/>
         </form>
 
 

@@ -4,11 +4,11 @@
   background: linear-gradient(180deg, var(--black2) 0%, var(--black1) 100%);
 }
 
-.nav__hero{
+/* .nav__hero{
   color: #f9f7f7;
   height: 70px;
   border-bottom: 1px solid rgba(255,255,255, 0.1);
-  background-color: #e91e63;
+  background-color: rgba(255,255,255, 0.1);
 }
 
 .nav__container{
@@ -17,7 +17,25 @@
   justify-content: space-between;
   height: inherit;
   padding: 0;
-  background-color: #e91e63;
+  background-color: rgba(255,255,255, 0.1);
+ 
+
+ 
+} */
+.nav__hero{
+  color: #f9f7f7;
+  height: 70px;
+  border-bottom: 1px solid rgba(255,255,255, 0.1);
+  background-color: #1A1B1F;
+}
+
+.nav__container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: inherit;
+  padding: 0;
+  background-color: #1A1B1F;
  
 
  

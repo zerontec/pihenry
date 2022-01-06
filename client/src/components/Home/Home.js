@@ -26,6 +26,8 @@ export default function Home() {
   const allRecipes = useSelector((state) => state.recipes);
   const diets = useSelector((state) => state.diets);
 
+  const titulo=' Know All Our Recipes'
+  const subTitulo = 'We offer a great variety '
   //Paginacion
   const [currentPage, setCurrentPage] = useState(1);
   const [recipesPerPage, setRecipesPerPage] = useState(9);
@@ -40,7 +42,7 @@ export default function Home() {
   //OrdenarPor Nombre
   const [orderNames, setOrderNames] = useState("");
   const [orderScores, setOrderScore] = useState("");
-  const [loading, setLoading] = useState(false);
+ 
   //useEfect
 
   useEffect(() => {
@@ -84,10 +86,10 @@ export default function Home() {
       <section className="he">
       <div className="container">
           <h2 className="subtitle">
-            Conoce Todas Nuestras Recetas <span className="point">.</span>
+           {titulo} <span className="point">.</span>
           </h2>
           <p className="copy__section ">
-            Ofrecemos una gran variedad 
+           { subTitulo }
           </p>
 </div>
 
@@ -97,10 +99,10 @@ export default function Home() {
       <SearchBar />
       <div className="busct">
         <button onClickCapture={(e) => handleClick(e)} className="cta">
-          Buscar Todas
+        Search All
         </button>
         <Link to={'/recipe'} >  <button  className="btnr">
-          Crear Receta
+        Create Recipe
         </button></Link> 
       </div>
 
@@ -108,40 +110,40 @@ export default function Home() {
 
       {/* Por Orden */}
       <div className="colun">
-        <form className="newsletter">
-          <select className="newsletter" onChange={(n) => handleSelectName(n)}>
-          <option value="default">Todas</option>
+        <form className="form">
+          <select className="form" onChange={(n) => handleSelectName(n)}>
+          <option value="default">All</option>
           <option value="A-Z">A-Z</option>
           <option value="Z-A">Z-A</option>
           </select>
-          <h3>Buscar en orden</h3>
+          <h3>Search in order</h3>
         </form>
 
-        <form className="newsletter">
-          <select className="newsletter" onChange={(s) => handleSelectScore(s)}>
-            <option value="ALL">Todas</option>
-            <option value="Asc">Mayor Puntajes</option>
-            <option value="Desc">Menor Puntajes</option>
+        <form className="form">
+          <select className="form" onChange={(s) => handleSelectScore(s)}>
+            <option value="ALL">All</option>
+            <option value="Asc">Highest Score</option>
+            <option value="Desc">Lower Scores</option>
           </select>
-          <h3>Buscar por Puntaje</h3>
+          <h3>Search by Score</h3>
         </form>
 
-        <form className="newsletter">
+        <form className="form">
           <select
-            className="newsletter"
+            className="form"
             onChange={(e) => handleSelectTypeDiet(e)}>
-            <option value="default">Todas</option>
+            <option value="default">All</option>
             {diets.map((e) => (
             <option value={e.name} key={e.id}>
               {e.name}
               </option> // mapeo las dietas por nombre y las renderizo
             ))}
           </select>
-          <h3>Buscar por Dieta</h3>
+          <h3>Search by Diet</h3>
         </form>
       </div>
 
-      <section className="services">
+      <section className="recipes">
         <div className="container">
         
 
@@ -157,7 +159,7 @@ export default function Home() {
                     c.image ? (
                       c.image
                     ) : (
-                      <img src="http://testimage.com" alt="Img no Encontrada" />
+                      <img src="https://previews.123rf.com/images/mackoflower/mackoflower1507/mackoflower150700380/42588917-variedad-de-ensaladas-populares-y-saludables-en-la-dieta-alimentos-collage-de-im%C3%A1genes.jpg" alt="Img no Encontrada" />
                     )
                   }
                    diets={
@@ -170,6 +172,7 @@ export default function Home() {
                     
                   }
                   score={c.aggregateLikes}
+                  healthScore={c.healthScore}
                 />
               </Link>
              </Fragment>

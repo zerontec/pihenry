@@ -8,14 +8,6 @@ column-width: 140px;
     
 }
 
-.container{
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    padding:100px 0;
-    height: auto;
-}
 
 .container--modifier{
     width: 60%;
@@ -27,26 +19,8 @@ column-width: 140px;
     background: linear-gradient(180deg, var(--black2) 0%, var(--black1) 100%);
 }
 
-.nav__hero{
-    color: #f9f7f7;
-    height: 70px;
-    border-bottom: 1px solid rgba(255,255,255, 0.1);
-    background-color: #1A1B1F;
-}
 
-.nav__container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: inherit;
-    padding: 0;
-    background-color: #1A1B1F;
-   
-  
-   
-}
-
-.services{
+.recipes{
     background: #fafafa;
 }
 
